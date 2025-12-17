@@ -1,0 +1,7 @@
+Wenn die Paketfehlerwahrscheinlichkeit 0 ist , läuft der Video ganz gut.Im Laufe der Zeit wenn die Paketfehlerwahrscheinlichkeit erhöht wird,
+geht mehr und mehre Bilder verloren.
+
+Video spülbar beeinträchtigen->über 50%
+
+
+#gnuplot rtp-fec.gp

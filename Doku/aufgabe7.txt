@@ -1,0 +1,11 @@
+jpegtran -restart  1 .\htw-0080.jpeg  > output.jpeg
+ hexedit changing the hex value und speichern
+
+  allow resynchronization after an error. Since most JPEG images are transmitted over error-free channels,
+  they're rarely needed. A restart interval is defined with the FFDD marker as a 2-byte number. This tells how
+  many MCUs between restart markers. When you encounter a restart marker (FFD0-FFD7), reset the DC values
+  (Y,Cr,Cb) to 0 and the bitstream is started on a byte boundary (after the FFDx). It's simply a matter of
+   counting through the restart interval over and over as you decode the image.
+  The restart marker values will increment from FFD0 to FFD7 and then start again at FFD0
+
+

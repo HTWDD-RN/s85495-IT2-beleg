@@ -1,0 +1,32 @@
+6.1. P_RTP=(0,1)^2=0,01. Das bedeutet, dass die Verlustrate der RTP-Pakete bei einer Kanalverlustrate von 10% mit FEC (k=2) 1% beträgt.
+
+
+6.3. Abschätzung der zu erwartenden Verlustraten mittels theoretischer Betrachtung
+
+Um die Paketverlustwahrscheinlichkeit theoretisch zu berechnen:
+
+    Bestimmen der Gruppenverlustwahrscheinlichkeit
+
+    P_{Gruppe} = 1 - (1 - P_{Kanal})^k.
+
+    Daraus die Paketverlustwahrscheinlichkeit ableiten.
+
+Für kleine Fehlerraten PKanal gilt:
+P_{RTP} ≈ P_{Kanal}^k
+
+
+6.4. Abschätzung der Bilddefektwahrscheinlichkeit
+
+Hier soll die Wahrscheinlichkeit für einen Bilddefekt bei unterschiedlichen Übertragungsmodi berechnet werden:
+
+    1 RTP/Bild: Die Bilddefektwahrscheinlichkeit entspricht der Paketverlustrate.
+
+    5 RTPs/Bild: Die Wahrscheinlichkeit für mindestens einen Bilddefekt steigt mit der Anzahl der RTPs.
+
+    20 RTPs/Bild: Ähnlich wie bei 5 RTPs/Bild, aber mit einer höheren Defektwahrscheinlichkeit.
+
+Die Formel für die Wahrscheinlichkeit, dass mindestens ein Paket verloren geht, ist:
+P_{Bilddefekt} = 1 - (1 - P_{RTP})^n
+
+Dabei ist n die Anzahl der RTPs pro Bild.
+

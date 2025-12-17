@@ -15,6 +15,8 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import video.VideoMetadata;
+import java.net.InetAddress;
+
 
 // https://github.com/tyazid/RTSP-Java-UrlConnection
 
@@ -137,34 +139,19 @@ abstract class RtspDemo {
    * Button handler for SETUP button
    * @return Success or not
    */
-   public boolean setup() {
-    // request is only valid if client is in correct state
-    if (state != State.INIT) {
-      logger.log(Level.WARNING, "RTSP state: " + state);
-      return false;
-    }
-    RTSPSeqNb++;  // increase RTSP sequence number for every RTSP request sent
-    send_RTSP_request("SETUP");
-    // Wait for the response
-    logger.log(Level.INFO, "Wait for response...");
-    if (parse_server_response() != 200) {
-      logger.log(Level.WARNING, "Invalid Server Response");
-      return false;
-    } else {
-      state = State.READY;
-      logger.log(Level.INFO, "New RTSP state: READY\n");
-      return true;
-    }
-  }
+   public abstract  boolean setup() ;
+
+
 
   public abstract boolean play();
+  public abstract  boolean pause() ;
 
-  public abstract boolean pause();
+ // public abstract boolean teardown();
+ public abstract boolean teardown() ;
+  public  abstract  void describe();
 
-  public abstract boolean teardown();
+  public abstract  void options();
 
-  public abstract void describe();
-  public abstract void options();
 
   /**
    * Sends a RTSP request to the server
@@ -172,14 +159,10 @@ abstract class RtspDemo {
    * write Requests to the RTSPBufferedWriter-Stream
    * use logger.log() for logging the request to the console
    * end request with BufferedWriter.flush()
-   * Variables to use:
-   *   url: RTSP-URL
-   *   RTSPid: Session number (0 - no active session)
-   *   RTP_RCV_PORT:  RTP-Port for receiving the media stream at the client
-   *   RTSPBufferWriter: Stream for sending the RTSP-data
-   *   logger: logging device
    */
-  public abstract void send_RTSP_request(String request_type);
+
+
+  public  abstract  void send_RTSP_request(String request_type) ;
 
 
   /**

@@ -5,20 +5,20 @@ usage: java Client [Server hostname] [Server RTSP listening port] [Video file re
 
 ---------------------- */
 
-import java.awt.image.BufferedImage;
-import java.net.*;
-import java.text.DecimalFormat;
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.Timer;
 import rtp.ReceptionStatistic;
 import rtp.RtpHandler;
 import rtsp.Rtsp;
 import utils.CustomLoggingHandler;
-import java.awt.Image;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.net.URI;
+import java.text.DecimalFormat;
+import java.util.Enumeration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Client  {
   int iteration = 0;  // for displaying statistics

@@ -1,0 +1,2 @@
+Nach meiner Beobachtung bis eine Paketfehlerwahrscheinlichkeit von 10% ist die Qualität des Videos gut. Man kann schon bis
+eine Paketfehlerwahrscheinlichkeit von 20%-25% die Videos anschauen aber wenn es über 30% oder 35% geht , geht das schlimmer.
